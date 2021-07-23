@@ -27,16 +27,16 @@ jobs:
 
 
       - name: Installing GCC
-        run: apt-get update && apt-get install -y g++
+        run: sudo apt-get update && apt-get install -y g++
 
       - name: Install CMAKE
-        run: apt-get update && apt-get install -y cmake
+        run: sudo apt-get update && apt-get install -y cmake
 
       - name: Install git
-        run: apt-get update && apt-get install -y git
+        run: sudo apt-get update && apt-get install -y git
 
       - name: Create Build Files
-        run: apt-get update && apt-get install -y libopenblas-dev
+        run: sudo apt-get update && apt-get install -y libopenblas-dev
 
       - name: Create Build Files
         run: |-
