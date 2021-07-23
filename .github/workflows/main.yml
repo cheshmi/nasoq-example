@@ -25,16 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-
-      - name: Installing GCC
-        run: sudo apt-get update && apt-get install -y g++
-
-      - name: Install CMAKE
-        run: sudo apt-get update && apt-get install -y cmake
-
-      - name: Install git
-        run: sudo apt-get update && apt-get install -y git
-
       - name: Create Build Files
         run: sudo apt-get update && apt-get install -y libopenblas-dev
 
