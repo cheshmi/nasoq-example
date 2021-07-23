@@ -25,36 +25,25 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - run:
-          name: Installing SUDO
-          command: >-
-            apt-get update && apt-get install -y sudo && rm -rf
-            /var/lib/apt/lists/*
-      - run:
-          name: Installing GCC
-          command: apt-get update && apt-get install -y g++
 
-      - run:
-          name: Install CMAKE
-          command: apt-get update && apt-get install -y cmake
+      - name: Installing GCC
+        run: apt-get update && apt-get install -y g++
 
-      - run:
-          name: Install git
-          command: apt-get update && apt-get install -y git
+      - name: Install CMAKE
+        run: apt-get update && apt-get install -y cmake
 
-      - run:
-          name: Create Build Files
-          command: apt-get update && apt-get install -y libopenblas-dev
+      - name: Install git
+        run: apt-get update && apt-get install -y git
 
-      - run:
-          name: Create Build Files
-          command: |-
+      - name: Create Build Files
+        run: apt-get update && apt-get install -y libopenblas-dev
+
+      - name: Create Build Files
+        run: |-
             mkdir ./cmake-build-release
             cmake --DC_BUILD_TYPE=Release ./cmake-build-release/
 
-      - run:
-          name: Create Baseline
-          command: make --directory=./cmake-build-release/ LBL_Test
+      - name: Create Baseline
+        run: make --directory=./cmake-build-release/ LBL_Test
 
 
