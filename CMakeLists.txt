@@ -3,6 +3,9 @@ cmake_minimum_required(VERSION 3.1)
 
 # set NASOQ properties such BLAS Type, etc
 set(NASOQ_BLAS_BACKEND "OpenBLAS" CACHE STRING "BLAS implementation for NASOQ to use")
+set(NASOQ_USE_CLAPACK  ON CACHE STRING "Use CLAPACK as the LAPACK implementaiton")
+
+
 add_subdirectory(nasoq)
 
 if(NOT DEFINED NASOQ_ROOT)
