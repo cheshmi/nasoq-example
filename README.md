@@ -8,12 +8,13 @@ You need to first clone NASOQ where you like (`NASOQ_ROOT`)
 ```
 git clone --recursive  https://github.com/cheshmi/nasoq-example.git
 ```
+Then, modify CMake and add necessary options based on the NASOQ guide. 
 
-Then you can build project by emitting following commands:
+And finally you can build project by emitting following commands:
 ```bash
 mkdir build
 cd build
-cmake -DMKL_ROOT_PATH=path/to/intel  -DNASOQ_ROOT=path/ended/with/nasoq/  -DCMAKE_BUILD_TYPE=Release ..
+cmake  -DNASOQ_ROOT=path/ended/with/nasoq/  -DCMAKE_BUILD_TYPE=Release ..
 make
 ```
 
