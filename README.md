@@ -1,22 +1,21 @@
 
-This is an example of using NASOQ and LBL out of source tree. 
-The code downloads nasoq as a module and builds examples. 
+This is an example of using NASOQ and LBL out of source tree. For details, please see [NASOQ documentation](https://nasoq.github.io/docs/getting-started-nasoq/#c-api-examples).
+The code downloads NASOQ as a module and builds the NASOQ/LBL examples. 
 You can alternatively define `NASOQ_ROOT` as where nasoq is installed.
 
-
-You need to first clone NASOQ where you like (`NASOQ_ROOT`)
-```
-git clone --recursive  https://github.com/cheshmi/nasoq-example.git
-```
-Then, modify CMake and add necessary options based on the NASOQ guide.
-In the current setting, CMake installs all dependencies automatically.
-
-And finally you can build project by emitting following commands:
+## Build
 ```bash
+git clone --recursive  https://github.com/cheshmi/nasoq-example.git
 mkdir build
 cd build
 cmake  -DCMAKE_BUILD_TYPE=Release ..
 make
 ```
+
+**important:** Make sure you have `--recursive` when you clone the repository. 
+
+Before building the code, you can modify CMake and add necessary options based on the [NASOQ guide](https://nasoq.github.io/docs/getting-started-nasoq/#installation).
+In the current setting, CMake installs all dependencies automatically.
+
 
 
