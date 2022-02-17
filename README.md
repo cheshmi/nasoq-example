@@ -6,10 +6,9 @@ You can alternatively define `NASOQ_ROOT` as where nasoq is installed.
 ## Build
 ```bash
 git clone --recursive  https://github.com/cheshmi/nasoq-example.git
-mkdir build
-cd build
-cmake  -DCMAKE_BUILD_TYPE=Release ..
-make
+cd nasoq-example
+cmake -DCMAKE_BUILD_TYPE=Release  -S . -B build
+cmake --build build --config Release -j 6 
 ```
 
 **important:** Make sure you have `--recursive` when you clone the repository. 
