@@ -53,3 +53,13 @@ add_executable(LBLSOMOD_Test ${SOURCE_FILES_NASOM} lbl_somod_main.cpp)
 target_link_libraries(LBLSOMOD_Test PRIVATE
         nasoq
         )
+
+
+### NAOSQ Eigen
+project(NASOQ_EIGEN_Test)
+set(CMAKE_CXX_STANDARD 11)
+set(SOURCE_FILES_NASOQ nasoq_eigen_test.cpp)
+add_executable(NASOQ_EIGEN_Test ${SOURCE_FILES_NASOQ})
+target_link_libraries(NASOQ_EIGEN_Test PRIVATE
+        nasoq
+        )
