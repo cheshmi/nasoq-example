@@ -7,7 +7,8 @@
 #include "nasoq/eigen_interface/include/nasoq/nasoq_eigen.h"
 
 void nasoqTest() {
-    double pert = 1e-9;
+    /// NOTE : this example is not strictly convex but you might get lucky!
+    double pert = 0;
     std::vector<Eigen::Triplet<double>> HList = {Eigen::Triplet<double>(0,0,1),
                                             Eigen::Triplet<double>(1,1,1),
                                             Eigen::Triplet<double>(2,2,1),
@@ -68,7 +69,8 @@ void nasoqTest() {
     Eigen::VectorXd d(15);
     d << -3.14159,-3.14159,-3.14159,0,0,0,6.28319,6.28319,6.28319,9.42478,9.42478,9.42478,3.14159,3.14159,3.14159;
 
-    nasoq::QPSettings *qs = NULL;
+    nasoq::QPSettings *qs = new nasoq::QPSettings();
+    qs->nasoq_variant = nasoq::AUTO;
     Eigen::VectorXd x,y,z;
     int status = nasoq::quadprog(H,q,A,b,C,d,x,y,z,qs);
 
