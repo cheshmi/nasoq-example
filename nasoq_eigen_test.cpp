@@ -80,7 +80,6 @@ void nasoqTest() {
         std::cout<<x[i]<<",";
     }
 
-    // expected z = {1.6,0,0,0}
     std::cout<<"\nDual variables: ";
     for (int i = 0; i < A.rows(); ++i) {
         std::cout<<y[i]<<",";
