@@ -90,6 +90,7 @@ void nasoqTest() {
  qsa->nasoq_variant = nasoq::AUTO;
  setting_list.push_back(qsa);
 
+
  int status = 0;
  Eigen::VectorXd x,y,z;
  for (const auto config : setting_list){
@@ -97,8 +98,7 @@ void nasoqTest() {
   if (status == 1)
    break;
  }
-
-
+ 
  std::cout<<status<<"\n";
  std::cout<<"Primal variables: ";
  for (int i = 0; i < H.rows(); ++i) {
